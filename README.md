@@ -40,7 +40,7 @@
 - **Data Flywheel Score:** 6/20
 - **Weakest Loop:** Correction (draft edits aren't captured yet)
 - **Competitive Position:** [describe axes + placement]
-- **Encroachment Defense:**
+- **Encroachment Defense:** Own the record, not the draft: capture every edit so next season starts from last year, and land drafts as real bookings with the guardrail and cost ledger
 - **Vendor Portability:** Ready / Partial / Locked
 
 → Details: [`02-the-moat/`](02-the-moat/)

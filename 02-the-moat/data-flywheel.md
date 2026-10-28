@@ -62,9 +62,9 @@
 
 *Your partner played the Big Tech attacker. What was their plan to kill you?*
 
-**Attacker:**
-**Attack vector (target the weakest loop):**
-**Weeks 1-4 - what they ship:**
-**Weeks 5-8 - how they poach users:**
-**Weeks 9-12 - why users don't come back:**
-**Your defense:**
+**Attacker:** OpenAI (ChatGPT), played as Head of Product
+**Attack vector (target the weakest loop):** Correction. Cottage Book throws away every edit a family makes to a draft. ChatGPT keeps every correction in the conversation and in memory, so its second season is better than Cottage Book's.
+**Weeks 1-4 - what they ship:** A "Plan a shared stay" template in ChatGPT group chats. Each family member adds their wishes, ChatGPT drafts the season with a fairness table, anyone can say "give Paul the Civic Holiday instead" to redraft, and it exports to Google and Apple Calendar.
+**Weeks 5-8 - how they poach users:** Seed the template in cottage and co-ownership Facebook groups and Reddit threads with "stop fighting over the long weekend." Free, no new app to install, and the family is already in ChatGPT.
+**Weeks 9-12 - why users don't come back:** Memory. Next spring ChatGPT says "last year Lisa had Canada Day and Paul changed two weeks, here's this year's draft." Cottage Book starts from a blank wish list, so the family never reopens it.
+**Your defense:** Own the record, not the draft. Capture every draft against the family's final schedule and every edit with its reason, so next season starts from last year automatically. The draft becomes real bookings with tenant isolation, the hard-limit guardrail, reminders and the shared cost ledger. ChatGPT can draft a season; Cottage Book is where the season actually lives and where its history compounds.
