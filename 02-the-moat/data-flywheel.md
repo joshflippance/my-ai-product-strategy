@@ -32,6 +32,21 @@
 **Weakest Loop:** Correction (tied with Network at 1/5; Correction chosen because it's the cheapest to fix and the one a free chatbot can't copy)
 **Fix for weakest loop:** Save every AI draft next to the family's final schedule, record each week they changed and why, and feed last season's edits into next season's prompt as "this family's corrections".
 
+
+## Competitor Flywheel Comparison: Family Cottage
+
+Scored from Family Cottage's public positioning (bookings, expenses, documents and communication for shared cabins, lake houses and beach houses) and the feature set recorded in the Cottage Book PRD (ADR-023): 44.99 a year per property, expense splits, nights-per-family fairness, round robin picks, family branches, documents and a notice board. No AI features seen.
+
+| Loop | Family Cottage | Season Draft | Why |
+|------|----------------|--------------|-----|
+| **Correction** | 1/5 | 1/5 | No AI output to correct, and nothing captured on either side |
+| **Preference** | 2/5 | 2/5 | Rotation order, branches and shares persist per property; history isn't used to learn |
+| **Domain Context** | 3/5 | 2/5 | Bookings, fairness, expenses and documents already run on one shared model of who owns what |
+| **Network** | 1/5 | 1/5 | Each property is isolated |
+| **Total** | **7/20** | **6/20** | |
+
+**What it means:** Family Cottage leads only on Domain Context, because its pieces are already joined up. Cottage Book's edge is the AI loop itself: neither product captures corrections today, so whoever builds the Correction loop first owns it.
+
 ---
 
 ## Encroachment Threat Assessment
