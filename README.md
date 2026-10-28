@@ -23,9 +23,9 @@
 
 - **Product:** Season Draft for Cottage Book: AI drafts a co-owned cottage's summer from each branch's wish list and share, with hard limits checked in code
 - **AI Value Archetype:** Oracle
-- **Vulnerability Scores:** Moat __/5 · Data __/5 · Platform __/5
-- **Top Risk:**
-- **Confidence:** H / M / L
+- **Vulnerability Scores:** Moat 2/5 · Data 2/5 · Platform 3/5
+- **Top Risk:** A free chatbot can draft the season, so the value must come from the guardrail, fairness history and the calendar it lands in
+- **Confidence:** M
 - **Prototype:** [Season Draft](https://claude.ai/artifact/W67a6fskoYcuErZ2vFydV5)
 - **Kill Criteria:** Fewer than 3 of 5 real co-owned cottages adopt the draft with 2 or fewer week changes, or a draft breaks a stated hard limit without the guardrail catching it
 
