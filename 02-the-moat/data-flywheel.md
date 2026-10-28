@@ -37,22 +37,24 @@
 ## Encroachment Threat Assessment
 
 ### 1. Platform Encroachment
-**Attacker:**
-**Vector:**
-**Time-to-threat:**
-**% of value at risk:**
+**Attacker:** OpenAI (ChatGPT)
+**Vector:** An organiser pastes the branches' wish lists into ChatGPT, or a shared ChatGPT group chat, and gets a season draft and family note for free.
+**Time-to-threat:** Now, 0 to 6 months. It already works well enough.
+**% of value at risk:** 50%. The draft itself is exposed; the calendar, guardrail, fairness history and cost ledger it lands in are not.
 
 ### 2. Vertical Competitor
-**Attacker:**
-**Vector:**
-**Time-to-threat:**
-**% of value at risk:**
+**Attacker:** Family Cottage (familycottage.app)
+**Vector:** Already sells co-owners branches, nights-per-family fairness, round robin picks and expense splits. An AI season draft is one more feature on data they already hold.
+**Data they have that I don't:** Booking and expense history across many co-owned properties today, versus one cottage for Cottage Book.
+**Time-to-threat:** 6 to 12 months.
+**% of value at risk:** 60%.
 
 ### 3. Adjacent Expansion
-**Attacker:**
-**Vector:**
-**Time-to-threat:**
-**% of value at risk:**
+**Attacker:** Cozi / TimeTree (family calendar apps)
+**Vector:** Add a shared-place booking view and an AI "plan our summer" planner on top of the family calendar.
+**Distribution advantage:** Millions of families already open them daily, so there's no new app to install or invite people to.
+**Time-to-threat:** 12 to 18 months.
+**% of value at risk:** 45%.
 
 ---
 
