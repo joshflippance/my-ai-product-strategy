@@ -41,7 +41,7 @@
 - **Weakest Loop:** Correction (draft edits aren't captured yet)
 - **Competitive Position:** [describe axes + placement]
 - **Encroachment Defense:** Own the record, not the draft: capture every edit so next season starts from last year, and land drafts as real bookings with the guardrail and cost ledger
-- **Vendor Portability:** Ready / Partial / Locked
+- **Vendor Portability:** Partial (single file, no adapter, fallback or eval yet)
 
 → Details: [`02-the-moat/`](02-the-moat/)
 
