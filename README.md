@@ -37,8 +37,8 @@
 
 **Why this won't get copied in 6 months.**
 
-- **Data Flywheel Score:** __/20
-- **Weakest Loop:**
+- **Data Flywheel Score:** 6/20
+- **Weakest Loop:** Correction (draft edits aren't captured yet)
 - **Competitive Position:** [describe axes + placement]
 - **Encroachment Defense:**
 - **Vendor Portability:** Ready / Partial / Locked
