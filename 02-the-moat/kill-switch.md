@@ -25,3 +25,15 @@ Absorb it, then cascade. A season draft costs cents and runs a few times a year 
 ## If Anthropic ships a competing product:
 <!-- What's defensible that they can't replicate? -->
 The record, not the model. Bookings under tenant isolation, the hard-limit guardrail, fairness history across seasons, branches and the shared cost ledger all live in Cottage Book, and none of it comes with a general assistant. The model is a swappable part: switch to another provider through `lib/ai.ts`.
+
+## Fire-Drill Timeline: Anthropic outage during spring planning
+<!-- Assumes the this-month actions are done: lib/ai.ts, a second provider adapter and the golden set -->
+
+| Time | Action |
+|------|--------|
+| **0 to 1 h** | Failover runs on its own: `lib/ai.ts` retries once, then routes Season Draft to the backup provider. Logs show which provider answered; a PostHog alert fires on the error rate. |
+| **1 to 4 h** | Confirm backup drafts pass the hard-limit guardrail. Run the golden set (10 seasons) against the backup; any breach blocks it and switches drafting to "try again later." |
+| **4 to 12 h** | Tell owners in a "What's new" style notice that drafts are running on a backup model and may read differently, and that bookings, costs and chat are unaffected. Hold the weekly triage cron; it can wait. |
+| **12 to 24 h** | Compare backup drafts with Anthropic's on the golden set: fairness delta, confidence tags and the family note. If Anthropic is still down, set the backup as primary in the env var. |
+| **24 to 48 h** | When Anthropic returns, re-run the golden set and switch back. Write up what broke, what the backup did worse, and whether to keep both live with routing by cost. |
+| **Today, before the actions ship** | The triage cron fails and retries next week. Season Draft isn't in production, so no family is affected. |

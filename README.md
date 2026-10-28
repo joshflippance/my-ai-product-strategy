@@ -37,9 +37,11 @@
 
 **Why this won't get copied in 6 months.**
 
+**Moat summary:** The moat is the record, not the model. Season Draft scores 6/20 against Family Cottage's 7/20; they lead on joined-up domain data, and neither captures corrections. Winning means building the Correction loop first: every draft stored against the family's final schedule, so next season starts from last year. The model is swappable (Partial today, 48-hour ready once `lib/ai.ts`, failover and the golden set ship).
+
 - **Data Flywheel Score:** 6/20
 - **Weakest Loop:** Correction (draft edits aren't captured yet)
-- **Competitive Position:** [describe axes + placement]
+- **Competitive Position:** Axes are AI drafting depth and co-ownership model depth. Cottage Book is ahead on AI drafting; Family Cottage is ahead on joined-up co-ownership data (bookings, fairness, expenses, documents).
 - **Encroachment Defense:** Own the record, not the draft: capture every edit so next season starts from last year, and land drafts as real bookings with the guardrail and cost ledger
 - **Vendor Portability:** Partial (single file, no adapter, fallback or eval yet)
 
