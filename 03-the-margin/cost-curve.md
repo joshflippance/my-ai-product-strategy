@@ -90,7 +90,7 @@ Monthly view at 100 paying cottages, 25 of them on Season Draft. Fixed hosting i
 
 **Before (traditional SaaS):** 48 CAD a year per cottage, all-you-can-eat. 400 CAD a month revenue, 84.5% gross margin.
 **After (AI-enabled):** Same base, plus 20 CAD per drafted season for co-owned cottages. 441.67 CAD a month revenue, 85.6% gross margin.
-**Net margin shift:** +1.1 points of margin, +40 CAD a month gross (+485 CAD a year).
+**Net margin shift:** +1.1 points of margin, +40 CAD a month gross (+483 CAD a year).
 
 **Narrative**
 - **Why margin % barely moves:** AI costs cents. A drafted season costs about 0.70 CAD in inference against 20 CAD of revenue, so the add-on lands at about 96% gross and lifts the blend slightly. Fixed hosting, not AI, sets the margin at this scale.
