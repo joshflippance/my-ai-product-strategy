@@ -68,7 +68,7 @@
 **Why users will trust a probabilistic system.**
 
 - **Reliability Target:** 92% golden-set pass rate (band 90 to 95), zero hard-limit breaches shipped, hallucination <1%, first draft p95 <45 s
-- **Golden Dataset:** 13 rows, 3 adversarial (v1 target about 150); rule judge in CI plus LLM rubric, run on both frontier and mid tiers
+- **Golden Dataset:** 23 rows, 6 adversarial (v1 target about 150); rule judge in CI plus LLM rubric, run on both frontier and mid tiers
 - **Confidence UX:** Tiered per week (Clear / Close call / Needs your call); guardrail breaches and contested weeks block lock-in until the organiser decides; reasoning, override, adjustable threshold and saved corrections
 - **HITL Architecture:** Weeks under 50% confidence or breaking a hard limit go to the organiser as "Needs your call"; the season can't lock until resolved; choices become corrections and golden rows
 - **Failure Mode Coverage:**
