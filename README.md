@@ -55,7 +55,7 @@
 
 - **Gross Margin (current):**
 - **Gross Margin (AI-adjusted):**
-- **Pricing Model:**
+- **Pricing Model:** Hybrid, penetration priced: 4 CAD a month base plus 20 CAD per drafted season (unlimited redrafts)
 - **Cascading Strategy:** Small tier reads limits and triages, mid writes explanations and the family note, frontier drafts the season; 75% / 25% cascade, blended 0.029 CAD a request
 - **Break-even at:**
 

@@ -61,9 +61,13 @@ Prices are assumed list prices, not looked up: small (Haiku-class) 1 USD in / 5 
 
 ## Pricing Model
 
-**Current pricing:**
-**Proposed AI pricing:**
-**Model:** seat-based / usage-based / outcome-based / hybrid
+**Strategy:** Penetrate. Win co-owned cottages before Family Cottage adds AI. The 48 CAD base already undercuts their 44.99 a year (probably USD, about 62 CAD), and the add-on stays cheap.
+**Unit of work:** One drafted season per cottage, with unlimited redrafts inside it. It meters the outcome families want, a settled summer, and keeps the redrafts that build trust free.
+**Current pricing:** 48 CAD a year per cottage (4 CAD a month), owner pays, family members free. Eels Lake founder price 36 CAD a year.
+**Proposed AI pricing:** Base 4 CAD a month, plus Season Draft at 20 CAD per drafted season.
+**Model:** Hybrid (base subscription plus outcome-based add-on per season)
+
+**Labor test:** The organiser of a co-owned cottage spends several hours each spring collecting wishes, settling clashes and re-sending the schedule. At even 25 CAD an hour, two hours is 50 CAD of work against a 20 CAD season, so the price is a giveaway, which is the point of a penetration price.
 
 ## Stress Tests
 
