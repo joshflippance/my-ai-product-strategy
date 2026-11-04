@@ -11,7 +11,7 @@
 | **The Bet** | M1 | [x] | `01-the-bet/` |
 | **The Moat** | M2 | [x] | `02-the-moat/` |
 | **The Margin** | M3 | [x] | `03-the-margin/` |
-| **The Contract** | M4 | [ ] | `04-the-contract/` |
+| **The Contract** | M4 | [x] | `04-the-contract/` |
 | **The Guardrails** | M5 | [ ] | `05-the-guardrails/` |
 | **The Pitch** | M6 | [ ] | `06-the-pitch/` |
 
@@ -68,10 +68,10 @@
 **Why users will trust a probabilistic system.**
 
 - **Reliability Target:** 92% golden-set pass rate (band 90 to 95), zero hard-limit breaches shipped, hallucination <1%, first draft p95 <45 s
-- **Golden Dataset:** 23 rows, 6 adversarial (v1 target about 150); rule judge in CI plus LLM rubric, run on both frontier and mid tiers
+- **Golden Dataset:** 27 rows, 7 adversarial (v1 target about 150); rule judge in CI plus LLM rubric, run on both frontier and mid tiers
 - **Confidence UX:** Tiered per week (Clear / Close call / Needs your call); guardrail breaches and contested weeks block lock-in until the organiser decides; reasoning, override, adjustable threshold and saved corrections
 - **HITL Architecture:** Weeks under 50% confidence or breaking a hard limit go to the organiser as "Needs your call"; the season can't lock until resolved; choices become corrections and golden rows
-- **Failure Mode Coverage:**
+- **Failure Mode Coverage:** 18 failure modes listed, all with a test or control defined; red team found wish-list gaming, stale drafts, lock-in races and misleading note numbers (fixes designed, not built)
 
 → Details: [`04-the-contract/`](04-the-contract/)
 
