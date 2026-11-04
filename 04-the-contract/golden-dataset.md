@@ -38,13 +38,23 @@ Feature under test: Season Draft. Today: 13 cases, 3 adversarial (rows 11 to 13 
 
 ## Confidence UX Design
 
-**Approach:** show uncertainty / tiered confidence / human-in-loop trigger
+**Approach:** Tiered confidence plus a human-in-loop trigger. Each week of the draft gets a confidence tier that sets how it looks and reads. Weeks the AI can't settle, or that break a hard limit, are blocked until the organiser decides. The season can't be locked in, and isn't charged, until every blocked week is resolved.
 
-**High confidence (>90%):**
-**Medium confidence (70-90%):**
-**Low confidence (<70%):**
+**How a week's tier is set:** the model's own tag, checked by code. A hard-limit breach always makes a week Not confident, whatever the model said. A week asked for by two or more branches can't be Confident. Anchors: Grammarly scales the depth of its rewrite to its certainty; Copilot cites sources and softens its tone when unsure.
+
+**Confident (>90%), shown as "Clear":** the week shows in the branch's colour with a one-line reason, for example "Only Lisa's family asked for this week." No action needed. Plain, direct copy.
+
+**Uncertain (50 to 90%), shown as "Close call":** the week gets an amber outline. The reason names the other branch with a claim, for example "Anne also wanted this week; she got Aug 14 instead." A "Swap with…" shortcut sits beside it. The copy softens to "suggested" rather than stating a decision.
+
+**Not confident (<50%), shown as "Needs your call":** no branch is pre-filled. The competing branches show side by side with their wish-list lines and nights against share, and the organiser picks one. The season can't lock until they do. No separate review queue: the organiser is the human in the loop. Guardrail breaches land here too, with the broken limit named.
 
 **User control surface:**
+| Control | Y/N | How |
+|---------|-----|-----|
+| Users adjust threshold | Y | One setting for the organiser: "Ask me about contested weeks only" (default) or "Ask me about close calls too." No percentages shown. |
+| See AI reasoning | Y | Every week shows its reason, and a "Where wishes clashed" list explains each tradeoff in nights. |
+| Correct and override | Y | Reassign any week; it's marked "Your call" and stays fixed in redrafts. |
+| Corrections feed the model | Y | Every change is saved next to the original draft and fed into next season's prompt as this family's corrections (the Module 2 fix for the Correction loop). |
 
 ## Reliability Contract
 

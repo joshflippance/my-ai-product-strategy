@@ -69,7 +69,7 @@
 
 - **Reliability Target:**
 - **Golden Dataset:** 13 rows, 3 adversarial (v1 target about 150); rule judge in CI plus LLM rubric, run on both frontier and mid tiers
-- **Confidence UX:** [approach]
+- **Confidence UX:** Tiered per week (Clear / Close call / Needs your call); guardrail breaches and contested weeks block lock-in until the organiser decides; reasoning, override, adjustable threshold and saved corrections
 - **HITL Architecture:**
 - **Failure Mode Coverage:**
 
