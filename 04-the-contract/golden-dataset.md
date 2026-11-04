@@ -58,15 +58,25 @@ Feature under test: Season Draft. Today: 13 cases, 3 adversarial (rows 11 to 13 
 
 ## Reliability Contract
 
+Tooling already in place: GitHub Actions CI, PostHog (events, error tracking, alerts), Vercel logs, and the `/admin` System health page. On-call: Josh (solo founder).
+
 | Metric | Target | Measurement | Alert Threshold |
 |--------|--------|-------------|-----------------|
-| Accuracy | | | |
-| Hallucination rate | | | |
-| Latency (p95) | | | |
-| Drift velocity | | | |
+| Accuracy | 92% of golden rows pass (every rule check plus an LLM score of 4 or more) | GitHub Actions on every PR that touches prompts or `lib/ai.ts`, plus weekly: the golden set (13 rows, growing to 150) on both frontier and mid tiers. The LLM judge uses a different provider than the drafter | <88% blocks the merge and emails Josh. Any hard-limit breach on any row blocks the release on its own |
+| Hallucination rate | <1% of weeks contain an invented date, limit or fact | Same run: code checks every extracted limit against the wish-list text; the LLM rubric flags invented facts | >2% auto-rolls back to the last passing model and prompt (env var) and emails Josh |
+| Latency (p95) | <45 s for a first draft (frontier), <10 s for a mid-tier redraft | PostHog `season_draft_completed` event with duration; Vercel logs | First-draft p95 >60 s for an hour routes first drafts to mid via `lib/ai.ts` and alerts Josh |
+| Drift velocity | Override rate (share of weeks organisers change before lock-in) rises <2 points a month | PostHog, 4-week rolling, plus a monthly golden re-run | >5-point rise in a month triggers a golden-set audit; the overridden weeks become new golden rows |
+
+**Defensible bands:** accuracy 90 to 95% (not 99); hard-limit breaches shipped: 0; hallucination <1%; latency <45 s; drift <2 points a month.
+**Consequence patterns:** block merge, auto-rollback, route to mid, golden-set audit, organiser queue.
 
 ## HITL Architecture
 <!-- When does a human step in? What's the escalation path? -->
+- **Trigger:** a week under 50% confidence, or a week still breaking a hard limit after one frontier rerun, becomes "Needs your call." The season can't lock in, or be charged, until the organiser decides.
+- **Who decides:** the organiser. Lock-in needs an owner or admin, matching Cottage Book's existing permissions.
+- **Privacy guard:** in a "Booked" only cottage, if code finds another branch's details in the family note, the note is withheld and replaced with a neutral template before anyone sees it.
+- **Feedback loop:** every organiser choice is saved next to the original draft as a correction. Josh reviews the override log monthly and turns repeated patterns into new golden rows; the corrections also feed next season's prompt.
+- **Escalation path:** organiser in the app, then a release block in CI, then an email to Josh, then rollback to the last passing model and prompt.
 
 ## Red-Team Findings
 *What failure mode did your partner find that you missed?*
