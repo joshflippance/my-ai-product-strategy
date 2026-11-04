@@ -10,7 +10,7 @@
 |-----------|--------|--------|-------------|
 | **The Bet** | M1 | [x] | `01-the-bet/` |
 | **The Moat** | M2 | [x] | `02-the-moat/` |
-| **The Margin** | M3 | [ ] | `03-the-margin/` |
+| **The Margin** | M3 | [x] | `03-the-margin/` |
 | **The Contract** | M4 | [ ] | `04-the-contract/` |
 | **The Guardrails** | M5 | [ ] | `05-the-guardrails/` |
 | **The Pitch** | M6 | [ ] | `06-the-pitch/` |
@@ -55,7 +55,7 @@
 
 - **Gross Margin (current):** 84.5% (100 cottages at 48 CAD a year, 62 CAD fixed hosting a month)
 - **Gross Margin (AI-adjusted):** 85.7% overall; the Season Draft add-on itself about 97%
-- **Pricing Model:** Hybrid, penetration priced: 4 CAD a month base plus 20 CAD per drafted season (unlimited redrafts)
+- **Pricing Model:** Hybrid, penetration priced: 4 CAD a month base plus an outcome-based 20 CAD per settled season, charged only when the draft is locked in as bookings
 - **Cascading Strategy:** Small tier reads limits and triages, mid writes explanations and the family note, frontier drafts the season; 80% / 20% cascade, blended 0.025 CAD a request
 - **Break-even at:** Gross break-even at 16 paying cottages (62 CAD fixed hosting / 4 CAD a month); each Season Draft season covers its own AI cost about 33 times over
 

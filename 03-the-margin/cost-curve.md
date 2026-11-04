@@ -74,10 +74,19 @@ Re-run at each split, keeping small and mid calls in a 40 to 35 proportion. Per 
 ## Pricing Model
 
 **Strategy:** Penetrate. Win co-owned cottages before Family Cottage adds AI. The 48 CAD base already undercuts their 44.99 a year (probably USD, about 62 CAD), and the add-on stays cheap.
-**Unit of work:** One drafted season per cottage, with unlimited redrafts inside it. It meters the outcome families want, a settled summer, and keeps the redrafts that build trust free.
+**Unit of work:** One settled season per cottage: the organiser locks the draft in as bookings. Unlimited redrafts inside it, and a season the family never settles is free.
 **Current pricing:** 48 CAD a year per cottage (4 CAD a month), owner pays, family members free. Eels Lake founder price 36 CAD a year.
-**Proposed AI pricing:** Base 4 CAD a month, plus Season Draft at 20 CAD per drafted season.
-**Model:** Hybrid (base subscription plus outcome-based add-on per season)
+**Proposed AI pricing:** Base 4 CAD a month, plus Season Draft at 20 CAD per settled season, charged only when the draft is locked in as bookings.
+**Model:** Hybrid (base subscription plus outcome-based fee per settled season)
+
+### Outcome-based redesign (priced like Intercom)
+Intercom charges per resolved conversation, not per seat or per message. Season Draft's equivalent of "resolved" is a settled season: the family accepts the draft and it becomes real bookings.
+
+- **Charge trigger:** the organiser taps "Lock in this season" and the draft writes the summer's bookings. That is the moment the outcome exists, and it is already an event the app records.
+- **Not charged:** drafts, redrafts, "Why not me?" explanations, and any season the family abandons. The family only pays when the AI actually settled the summer.
+- **Why it fits:** it removes the risk of paying for a draft the family rejects, which is the trust gap named in Module 1, and it makes the kill criteria (3 of 5 cottages adopt the draft) the same number as revenue.
+- **Cost of an unsettled season:** about 0.60 CAD of inference with no revenue. At 97% gross on settled seasons, one settled season covers more than 30 abandoned ones.
+- **Risk:** revenue now depends on the settle rate, not just sign-ups. The board one-pager assumes all 25 drafted seasons settle; at the kill-criteria floor of 60%, add-on revenue falls from 41.67 to 25 CAD a month.
 
 **Labor test:** The organiser of a co-owned cottage spends several hours each spring collecting wishes, settling clashes and re-sending the schedule. At even 25 CAD an hour, two hours is 50 CAD of work against a 20 CAD season, so the price is a giveaway, which is the point of a penetration price.
 
