@@ -16,35 +16,48 @@ Unit: one cottage on the Season Draft add-on, per month, in CAD. Revenue is the 
 
 | Input | My number | Stress (3x) |
 |-------|-----------|-------------|
-| Avg requests/user/month | 0.5 (6 drafts a season, averaged over 12 months) | 1.5 |
-| Cost per request (blended) | 0.05 CAD | 0.15 CAD |
-| Monthly COGS per user | 0.025 CAD | 0.225 CAD |
+| Avg requests/user/month | 2 (6 draft sessions a season, about 4 AI calls each, averaged over 12 months) | 6 |
+| Cost per request (blended) | 0.029 CAD (see cost curve) | 0.087 CAD |
+| Monthly COGS per user | 0.058 CAD | 0.52 CAD |
 | Revenue per user/month | 5.67 CAD | 5.67 CAD |
-| Gross margin per user | 5.65 CAD | 5.45 CAD |
-| Gross margin % | 99.6% | 96.0% |
+| Gross margin per user | 5.61 CAD | 5.15 CAD |
+| Gross margin % | 99.0% | 90.8% |
 
-**Cost per request assumption:** one draft is about 2,500 input tokens (prompt, 4 branches, 11 weeks) and 2,000 output tokens (limits, assignments, tradeoffs, family note). At Sonnet-class list prices (3 USD per million input, 15 USD per million output) that is about 0.04 USD, or 0.05 CAD.
+**Cost per request assumption:** blended from the cost curve below. Updated from a first single-model estimate (0.5 requests a month at 0.05 CAD) once Season Draft was split into tiers.
 
 **What it means:** AI inference is not the margin risk. Even at 3x it stays well above the 40% line. The real pressure on a 68 CAD yearly plan is payment fees and fixed hosting at low volume, not the model.
+
+## Cost Curve: Features to Tiers
+
+Prices are assumed list prices, not looked up: small (Haiku-class) 1 USD in / 5 USD out per million tokens, mid (Sonnet-class) 3 / 15, frontier (Opus-class) 5 / 25. 1 USD = 1.38 CAD.
+
+| Feature | Complexity | Model tier | Cost/req | Volume % | Weighted |
+|---------|-----------|------------|----------|----------|----------|
+| Read hard limits from wish lists; weekly feedback triage | Simple | Small | 0.004 CAD (about 1,500 in / 300 out) | 40% | 0.0016 CAD |
+| "Why not me?" explanations; family note | Medium | Mid | 0.017 CAD (about 2,000 in / 400 out) | 35% | 0.006 CAD |
+| Season draft (assign every week, tradeoffs, confidence) | Complex | Frontier | 0.086 CAD (about 2,500 in / 2,000 out) | 25% | 0.0215 CAD |
+| **Blended** | | | | **100%** | **0.029 CAD** |
+
+**Blended cost per add-on cottage per month:** 2 requests x 0.029 CAD = 0.058 CAD. Sending every call to the frontier model would cost 0.172 CAD, so the cascade cuts AI COGS by about two thirds.
 
 ## Cost Model
 
 | Cost Category | Per-User/Month | Notes |
 |--------------|----------------|-------|
-| Inference (primary model) | 0.025 CAD | 0.5 drafts a month at 0.05 CAD each |
-| Inference (cascading/triage) | 0 | No cascade yet; one model handles every draft |
+| Inference (primary model) | 0.0435 CAD | Frontier season drafts plus mid-tier explanations and notes |
+| Inference (cascading/triage) | 0.0032 CAD | Small tier reads hard limits and runs feedback triage |
 | Infrastructure | To confirm | Shared fixed hosting (Vercel, Supabase), not driven by AI use; confirm from the bills |
 | Data/storage | ~0 | A few KB of JSON per draft |
 | Human-in-the-loop | 0 | The family organiser reviews each draft; no paid reviewer |
-| **Total AI COGS** | **0.025 CAD** | |
+| **Total AI COGS** | **0.058 CAD** | 2 requests a month at a blended 0.029 CAD (rounding) |
 
 ## Cascading Strategy
 <!-- Cheap model → frontier model routing logic -->
 
-**Triage model:**
-**Frontier model:**
-**Routing rule:**
-**Expected cascade ratio:**
+**Triage model:** Small tier (Haiku-class). Reads each branch's hard limits out of the wish lists, and runs the weekly feedback triage.
+**Frontier model:** Frontier tier (Opus-class). Drafts the season: assigns every week against shares, writes the tradeoffs and confidence tags. A mid tier (Sonnet-class) handles "Why not me?" explanations and the family note.
+**Routing rule:** Route by task type in `lib/ai.ts`: extraction and classification go small, explanation and writing go mid, the full draft goes frontier. If the code guardrail finds a hard-limit breach, rerun the draft once on frontier with the breach named; if it still fails, flag the week to the organiser instead of retrying.
+**Expected cascade ratio:** 75% / 25% (small and mid / frontier)
 
 ## Pricing Model
 
@@ -56,9 +69,9 @@ Unit: one cottage on the Season Draft add-on, per month, in CAD. Revenue is the 
 
 | Scenario | Impact on Margin | Response |
 |----------|-----------------|----------|
-| Inference costs 3x | COGS 0.075 CAD; margin 99.6% to 98.7% | Absorb. No change needed. |
-| Heaviest segment doubles | Requests 0.5 to 1.0 a month; COGS 0.05 CAD; margin 99.1% | Absorb. Watch for heavy redrafting as a sign the first draft misses. |
-| Model provider raises prices 50% | COGS 0.0375 CAD; margin 99.3% | Absorb, then move triage to a cheaper tier via `lib/ai.ts` (see kill switch). |
+| Inference costs 3x | COGS 0.17 CAD; margin 99.0% to 96.9% | Absorb. No change needed. |
+| Heaviest segment doubles | Requests 2 to 4 a month; COGS 0.12 CAD; margin 98.0% | Absorb. Watch for heavy redrafting as a sign the first draft misses. |
+| Model provider raises prices 50% | COGS 0.087 CAD; margin 98.5% | Absorb. Test the draft on the mid tier against the golden set; move it down if it passes. |
 
 ## Board One-Pager
 <!-- Before/After: Old SaaS revenue vs. AI usage revenue for your product -->

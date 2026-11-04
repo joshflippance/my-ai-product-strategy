@@ -56,7 +56,7 @@
 - **Gross Margin (current):**
 - **Gross Margin (AI-adjusted):**
 - **Pricing Model:**
-- **Cascading Strategy:**
+- **Cascading Strategy:** Small tier reads limits and triages, mid writes explanations and the family note, frontier drafts the season; 75% / 25% cascade, blended 0.029 CAD a request
 - **Break-even at:**
 
 → Details: [`03-the-margin/`](03-the-margin/)
