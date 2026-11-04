@@ -68,7 +68,7 @@
 **Why users will trust a probabilistic system.**
 
 - **Reliability Target:**
-- **Golden Dataset:** __ rows, __ adversarial
+- **Golden Dataset:** 10 rows, 3 adversarial (v1 target about 150); rule judge in CI plus LLM rubric
 - **Confidence UX:** [approach]
 - **HITL Architecture:**
 - **Failure Mode Coverage:**
