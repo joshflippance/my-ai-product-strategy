@@ -1,5 +1,15 @@
 # Cost Curve & Pricing Strategy
 
+## Packaging Decision
+
+| Leader | Filler | Killer | Killer usage % | Bundle or add-on |
+|--------|--------|--------|----------------|------------------|
+| Shared booking calendar | Shared costs and balances | Season Draft | About 25% (estimate) | Add-on, per season |
+
+**Why:** Families come for the calendar, the one link that ends "who has the long weekend?" in the group chat. Shared costs lift value for co-owners and match Family Cottage's expense splits. Season Draft is the only feature with a real AI cost per use, and it only matters to co-owned cottages with branches, an estimated 25% of cottages. Under the 70% rule that makes it an add-on: for example, 20 CAD a season per cottage on top of the 48 CAD plan, so the 75% who never use it don't pay for it.
+
+**Assumption to test:** the 25% usage figure is an estimate. No cottage has used Season Draft yet.
+
 ## Cost Model
 
 | Cost Category | Per-User/Month | Notes |
