@@ -80,6 +80,20 @@ Prices are assumed list prices, not looked up: small (Haiku-class) 1 USD in / 5 
 ## Board One-Pager
 <!-- Before/After: Old SaaS revenue vs. AI usage revenue for your product -->
 
-**Before (traditional SaaS):**
-**After (AI-enabled):**
-**Net margin shift:**
+Monthly view at 100 paying cottages, 25 of them on Season Draft. Fixed hosting is about 62 CAD a month (Vercel Pro plus Supabase Pro at list price). Payment fees are left out of both sides.
+
+| | Before (traditional SaaS) | After (AI-enabled) |
+|---|---|---|
+| **Revenue** | 4 CAD/cottage x 100 cottages = 400 CAD | 400 CAD base + 20 CAD x 25 drafted seasons a year (41.67 CAD a month) = 441.67 CAD |
+| **COGS** | 62 CAD (fixed) | 62 CAD fixed + 1.45 CAD AI (25 x 0.058) = 63.45 CAD (variable) |
+| **Gross margin** | 338 CAD, 84.5% | 378.22 CAD, 85.6% |
+
+**Before (traditional SaaS):** 48 CAD a year per cottage, all-you-can-eat. 400 CAD a month revenue, 84.5% gross margin.
+**After (AI-enabled):** Same base, plus 20 CAD per drafted season for co-owned cottages. 441.67 CAD a month revenue, 85.6% gross margin.
+**Net margin shift:** +1.1 points of margin, +40 CAD a month gross (+485 CAD a year).
+
+**Narrative**
+- **Why margin % barely moves:** AI costs cents. A drafted season costs about 0.70 CAD in inference against 20 CAD of revenue, so the add-on lands at about 96% gross and lifts the blend slightly. Fixed hosting, not AI, sets the margin at this scale.
+- **Where gross $ and NRR win:** revenue per cottage rises about 10% with no new customers. The add-on renews every season, so co-owned cottages expand each year, and it gives them a reason to stay that Family Cottage doesn't offer yet. That expansion is the NRR story.
+- **Hedge:** the cascade keeps 75% of calls on small and mid models, the kill switch makes the provider swappable, and redrafts are unlimited inside a season, so heavy use costs cents, not dollars. Even at 3x inference cost the add-on stays above 90% gross. The risk to watch is the 25% adoption estimate, not cost.
+
