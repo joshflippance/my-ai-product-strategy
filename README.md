@@ -83,7 +83,7 @@
 
 - **Compounding System:** Three learning loops designed, none active yet (recursive learning missing, cross-domain broken, network missing); fails the 3-month freeze test today. Fix: use corrections within the season, monthly golden rows, anonymous cross-cottage patterns
 - **Governance Posture:** AI drafts and tags on its own; locking in, sending and charging need the owner or organiser; shares, roles, bookings and merges are never automatic. Audits every PR, weekly, monthly and quarterly
-- **Shadow AI Status:** 6 user workarounds found (likely, not yet confirmed), 4 build candidates; about 35 CAD a month adjacent spend per co-owned cottage
+- **Shadow AI Status:** 10 user workarounds audited (0 seen, 2 backed by backlog, 8 hypotheses); 5 build, 1 partner, 4 ignore; about 35 CAD a month adjacent spend per co-owned cottage
 - **Agent Boundaries:** One agent (weekly feedback triage): reads feedback, writes verdicts, opens a PR, never merges. Season Draft is a single call, not an agent
 - **Regulatory Exposure:** PIPEDA; Quebec Law 25 once Quebec residents join (privacy officer, PIA, breach reporting); EU AI Act minimal risk, only if EU residents join
 

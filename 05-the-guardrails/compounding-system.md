@@ -77,19 +77,27 @@ Connecting them is read-only work inside one cottage, so it stays within the RLS
 
 ## Shadow AI Audit
 
-User-side: AI workarounds families build around Cottage Book. Columns: Tool = workaround, Owner = signal, Risk = frequency, Decision = build / partner / ignore.
+User-side audit of AI workarounds families build around Cottage Book. Auditor: Claude, for Josh, 2026-11-09. Repo columns: Tool = workaround, Owner = signal, Risk = frequency, Decision = build / partner / ignore.
 
-**Caveat:** these are likely workarounds, not observed ones. One family is dogfooding and no one has reported an AI workaround yet. The backlog shows the underlying pain (family members on different calendar apps, paper calendars, no arrival list). Next step: ask the Eels Lake families, "Have you ever used ChatGPT or another app to sort out cottage dates, costs or messages?"
+**Method:** searched Josh's Gmail for Cottage Book with ChatGPT, Claude, Zapier, Family Cottage, Splitwise, AI and spreadsheet: no user-built AI workarounds found (only internal mail and one placeholder feedback note). Reviewed `docs/BACKLOG.md` for family-reported pain. The in-app `feedback` table was not reviewed (production access not granted to the auditor).
 
-| Tool | Owner | Risk Level | Decision |
-|------|-------|-----------|----------|
-| Organiser pastes everyone's summer wishes into ChatGPT to work out who gets which week | workflow | H | build (Season Draft) |
-| Organiser asks ChatGPT to word the "you can't have Canada Day" message so it doesn't start a fight | trust | M | build (Season Draft's family note) |
-| Co-owners photograph receipts and ask ChatGPT, or use Splitwise, to work out who owes whom | capability | M | build (receipt photo to cost entry, small tier, on top of shared costs) |
-| Owner asks ChatGPT to turn the old paper opening and closing binder into checklists | capability | L | build (house-info import from a photo) |
-| Members screenshot the calendar into ChatGPT or Gemini to ask "when is it free in August?" | workflow | L | ignore (fix the calendar view instead) |
-| Family drafts the summer in free ChatGPT instead of paying for the add-on | pricing | H | ignore (outcome pricing answers it: pay only when a season settles) |
+**Evidence levels:** *Seen* = a user did it. *Backlog* = the pain is reported in the backlog; the AI workaround is inferred. *Hypothesis* = expected from comparable products, no evidence yet.
 
-**Total tools found:** 6 workarounds (likely, not yet confirmed by families)
-**Tools after triage:** 4 build candidates (two already in the Season Draft prototype), 2 ignore
+| # | Tool | Owner | Risk Level | Evidence | Decision |
+|---|------|-------|-----------|----------|----------|
+| 1 | Organiser pastes everyone's summer wishes into ChatGPT to work out who gets which week | workflow | H | Hypothesis | build (Season Draft) |
+| 2 | Organiser asks ChatGPT to word the "you can't have Canada Day" message so it doesn't start a fight | trust | M | Hypothesis | build (Season Draft's family note) |
+| 3 | Co-owners photograph receipts into ChatGPT, or use Splitwise, to work out who owes whom | capability | M | Hypothesis | build (receipt photo to cost entry, small tier, on top of shared costs) |
+| 4 | Owner asks ChatGPT to turn the old paper opening and closing binder into checklists | capability | L | Backlog (no arrival list, paper calendars) | build (house-info import from a photo) |
+| 5 | Members screenshot the calendar into ChatGPT or Gemini to ask "when is it free in August?" | workflow | L | Hypothesis | ignore (fix the calendar view instead) |
+| 6 | Family drafts the summer in free ChatGPT instead of paying for the add-on | pricing | H | Hypothesis | ignore (outcome pricing answers it: pay only when a season settles) |
+| 7 | Co-owners tally nights per family in a Google Sheet, with Gemini or formulas | workflow | M | Hypothesis | build (show the fair-share tally in the app, respecting "Booked" only mode) |
+| 8 | Owner uses Zapier or IFTTT to post new bookings into the family WhatsApp group | workflow | M | Backlog (members on different calendar apps) | partner (one-tap WhatsApp share plus the existing ICS feed) |
+| 9 | Members ask ChatGPT to translate house notes for French-speaking relatives | capability | L | Hypothesis | ignore (browser translation is enough for now) |
+| 10 | Prospective owner asks ChatGPT "Family Cottage or Cottage Book for co-owners?" before buying | trust | M | Hypothesis | ignore in product; answer it on the pricing page |
+
+**Total tools found:** 10 workarounds (0 seen, 2 backed by backlog pain, 8 hypotheses)
+**Tools after triage:** 5 build, 1 partner, 4 ignore
 **Estimated hidden spend:** about 35 CAD a month per co-owned cottage: an organiser's ChatGPT Plus (about 28 CAD) plus Splitwise Pro (about 7 CAD), against 5.67 CAD a month for Cottage Book with the add-on. Estimates from list prices, not checked; most of the ChatGPT spend isn't for the cottage.
+
+**Auditor's opinion:** directionally useful but evidence-thin; every build decision rests on one family. Before building rows 3, 4 or 7, confirm each with at least 3 Eels Lake families using one question: "Have you ever used ChatGPT, a spreadsheet or another app to sort out cottage dates, costs or messages?" Row 1 is the exception: it is the bet already under test through the Module 1 kill criteria.
