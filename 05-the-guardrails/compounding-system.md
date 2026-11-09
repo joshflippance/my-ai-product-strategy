@@ -66,7 +66,7 @@ Connecting them is read-only work inside one cottage, so it stays within the RLS
 | Quarterly | Provider swap drill (kill switch), regulatory check, review of this policy | Josh |
 
 **Regulatory exposure (EU AI Act / other):**
-- **Regimes that apply:** PIPEDA (federal Canadian privacy law). Quebec Law 25 if cottages have Quebec members. EU AI Act and GDPR only if EU residents are invited; not targeted today.
+- **Regimes that apply:** PIPEDA (federal Canadian privacy law). Quebec Law 25 applies once any Quebec resident joins a cottage, whatever the business's location; it would require a named privacy officer, a privacy impact assessment for transfers outside Quebec (Supabase, Vercel and Anthropic host elsewhere), and breach reporting. EU AI Act and GDPR only if EU residents are invited; not targeted today.
 - **Risk tier (EU AI Act framing):** Minimal. Scheduling suggestions for a family's own cottage, with a human locking in every season; no decisions about rights, credit, employment or safety.
 - **Controls in place:** tenant isolation in Postgres RLS; only the wish lists, branch names and dates needed for a draft go in the prompt (no emails, phone numbers or payment data); the provider's API terms exclude training on our inputs; the service role key never reaches the browser; logs hold ids and counts only, never wish-list text or emails; cottage chat messages are deleted after a year.
 

@@ -85,7 +85,7 @@
 - **Governance Posture:** AI drafts and tags on its own; locking in, sending and charging need the owner or organiser; shares, roles, bookings and merges are never automatic. Audits every PR, weekly, monthly and quarterly
 - **Shadow AI Status:** __ tools found, __ triaged
 - **Agent Boundaries:** One agent (weekly feedback triage): reads feedback, writes verdicts, opens a PR, never merges. Season Draft is a single call, not an agent
-- **Regulatory Exposure:** PIPEDA (Quebec Law 25 if Quebec members); EU AI Act minimal risk, only if EU residents join
+- **Regulatory Exposure:** PIPEDA; Quebec Law 25 once Quebec residents join (privacy officer, PIA, breach reporting); EU AI Act minimal risk, only if EU residents join
 
 → Details: [`05-the-guardrails/`](05-the-guardrails/)
 
