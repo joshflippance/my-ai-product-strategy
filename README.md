@@ -81,7 +81,7 @@
 
 **What breaks when this scales — and what compounds.**
 
-- **Compounding System:** [describe feedback loops]
+- **Compounding System:** Three learning loops designed, none active yet (recursive learning missing, cross-domain broken, network missing); fails the 3-month freeze test today. Fix: use corrections within the season, monthly golden rows, anonymous cross-cottage patterns
 - **Governance Posture:** [approach]
 - **Shadow AI Status:** __ tools found, __ triaged
 - **Agent Boundaries:**
