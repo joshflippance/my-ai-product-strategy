@@ -31,14 +31,49 @@ Connecting them is read-only work inside one cottage, so it stays within the RLS
 
 ## Governance Policy
 
-**Scope:**
+**Policy for:** Cottage Book AI features (Season Draft v1, feedback triage)
+
+**Scope:** All AI features in Cottage Book: Season Draft (reading hard limits from wish lists, drafting the season, explanations and the family note) and the weekly feedback triage job. Excludes PostHog product analytics and error tracking (no model calls), and Claude Code used to build the app (a development tool, not part of the product).
+
 **Autonomy boundaries:**
+| Decision | Level |
+|----------|-------|
+| Read hard limits from a wish list | auto |
+| Draft or redraft the season | auto |
+| Tag each week's confidence | auto |
+| Write the family note | auto |
+| Lock in the season as real bookings (and charge for it) | human approval (owner or admin) |
+| Resolve a "Needs your call" week | human approval (organiser) |
+| Send the family note to members | human approval (organiser) |
+| Change branch shares, roles or membership | never auto |
+| Move or delete an existing booking | never auto |
+| Merge a code change from feedback triage | never auto |
+
 **Escalation triggers:**
+1. A week's confidence is below 50%.
+2. A week still breaks a hard limit after one frontier rerun.
+3. A branch's limits leave only holiday weeks, or block more than 70% of the season.
+4. A wish list contains instruction-like text ("ignore", "override", "system") or claims to be another branch.
+5. In a "Booked" only cottage, the family note mentions another branch's details.
+6. Any wish list or share changes after the draft and before lock-in.
+
 **Audit cadence:**
+| Cadence | What we review | Owner |
+|---------|----------------|-------|
+| Every PR | Golden set (27 rows) on frontier and mid tiers; any hard-limit breach blocks the release | Josh |
+| Weekly | Golden set run, hallucination rate, latency p95, triage results | Josh |
+| Monthly | Organiser override log; repeated overrides become golden rows | Josh |
+| Quarterly | Provider swap drill (kill switch), regulatory check, review of this policy | Josh |
+
 **Regulatory exposure (EU AI Act / other):**
+- **Regimes that apply:** PIPEDA (federal Canadian privacy law). Quebec Law 25 if cottages have Quebec members. EU AI Act and GDPR only if EU residents are invited; not targeted today.
+- **Risk tier (EU AI Act framing):** Minimal. Scheduling suggestions for a family's own cottage, with a human locking in every season; no decisions about rights, credit, employment or safety.
+- **Controls in place:** tenant isolation in Postgres RLS; only the wish lists, branch names and dates needed for a draft go in the prompt (no emails, phone numbers or payment data); the provider's API terms exclude training on our inputs; the service role key never reaches the browser; logs hold ids and counts only, never wish-list text or emails; cottage chat messages are deleted after a year.
 
 ## Agent Topology
 <!-- If using agents: what can each agent do? What can't it do? Who approves what? -->
+- **Feedback triage agent (weekly cron):** can read untriaged feedback across every cottage, write a status, priority and rationale back onto those rows, open a pull request appending to `docs/BACKLOG.md`, and email Josh a digest. Cannot merge, read bookings, notes or chat, or write to any other table. Approval: Josh reviews and merges the PR.
+- **Season Draft:** not an agent. A single model call per request that returns JSON; it takes no actions. Code applies the guardrail, and a human locks in every season.
 
 ## Shadow AI Audit
 
