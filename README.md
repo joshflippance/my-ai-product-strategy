@@ -12,7 +12,7 @@
 | **The Moat** | M2 | [x] | `02-the-moat/` |
 | **The Margin** | M3 | [x] | `03-the-margin/` |
 | **The Contract** | M4 | [x] | `04-the-contract/` |
-| **The Guardrails** | M5 | [ ] | `05-the-guardrails/` |
+| **The Guardrails** | M5 | [x] | `05-the-guardrails/` |
 | **The Pitch** | M6 | [ ] | `06-the-pitch/` |
 
 ---
@@ -83,7 +83,7 @@
 
 - **Compounding System:** Three learning loops designed, none active yet (recursive learning missing, cross-domain broken, network missing); fails the 3-month freeze test today. Fix: use corrections within the season, monthly golden rows, anonymous cross-cottage patterns
 - **Governance Posture:** AI drafts and tags on its own; locking in, sending and charging need the owner or organiser; shares, roles, bookings and merges are never automatic. Audits every PR, weekly, monthly and quarterly
-- **Shadow AI Status:** __ tools found, __ triaged
+- **Shadow AI Status:** 6 user workarounds found (likely, not yet confirmed), 4 build candidates; about 35 CAD a month adjacent spend per co-owned cottage
 - **Agent Boundaries:** One agent (weekly feedback triage): reads feedback, writes verdicts, opens a PR, never merges. Season Draft is a single call, not an agent
 - **Regulatory Exposure:** PIPEDA; Quebec Law 25 once Quebec residents join (privacy officer, PIA, breach reporting); EU AI Act minimal risk, only if EU residents join
 

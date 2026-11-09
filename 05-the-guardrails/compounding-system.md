@@ -77,12 +77,19 @@ Connecting them is read-only work inside one cottage, so it stays within the RLS
 
 ## Shadow AI Audit
 
+User-side: AI workarounds families build around Cottage Book. Columns: Tool = workaround, Owner = signal, Risk = frequency, Decision = build / partner / ignore.
+
+**Caveat:** these are likely workarounds, not observed ones. One family is dogfooding and no one has reported an AI workaround yet. The backlog shows the underlying pain (family members on different calendar apps, paper calendars, no arrival list). Next step: ask the Eels Lake families, "Have you ever used ChatGPT or another app to sort out cottage dates, costs or messages?"
+
 | Tool | Owner | Risk Level | Decision |
 |------|-------|-----------|----------|
-| | | H / M / L | keep / govern / kill |
-| | | H / M / L | keep / govern / kill |
-| | | H / M / L | keep / govern / kill |
+| Organiser pastes everyone's summer wishes into ChatGPT to work out who gets which week | workflow | H | build (Season Draft) |
+| Organiser asks ChatGPT to word the "you can't have Canada Day" message so it doesn't start a fight | trust | M | build (Season Draft's family note) |
+| Co-owners photograph receipts and ask ChatGPT, or use Splitwise, to work out who owes whom | capability | M | build (receipt photo to cost entry, small tier, on top of shared costs) |
+| Owner asks ChatGPT to turn the old paper opening and closing binder into checklists | capability | L | build (house-info import from a photo) |
+| Members screenshot the calendar into ChatGPT or Gemini to ask "when is it free in August?" | workflow | L | ignore (fix the calendar view instead) |
+| Family drafts the summer in free ChatGPT instead of paying for the add-on | pricing | H | ignore (outcome pricing answers it: pay only when a season settles) |
 
-**Total tools found:**
-**Tools after triage:**
-**Estimated hidden spend:**
+**Total tools found:** 6 workarounds (likely, not yet confirmed by families)
+**Tools after triage:** 4 build candidates (two already in the Season Draft prototype), 2 ignore
+**Estimated hidden spend:** about 35 CAD a month per co-owned cottage: an organiser's ChatGPT Plus (about 28 CAD) plus Splitwise Pro (about 7 CAD), against 5.67 CAD a month for Cottage Book with the add-on. Estimates from list prices, not checked; most of the ChatGPT spend isn't for the cottage.
