@@ -72,8 +72,36 @@ Connecting them is read-only work inside one cottage, so it stays within the RLS
 
 ## Agent Topology
 <!-- If using agents: what can each agent do? What can't it do? Who approves what? -->
-- **Feedback triage agent (weekly cron):** can read untriaged feedback across every cottage, write a status, priority and rationale back onto those rows, open a pull request appending to `docs/BACKLOG.md`, and email Josh a digest. Cannot merge, read bookings, notes or chat, or write to any other table. Approval: Josh reviews and merges the PR.
-- **Season Draft:** not an agent. A single model call per request that returns JSON; it takes no actions. Code applies the guardrail, and a human locks in every season.
+
+### Feedback Triage Agent
+`app/api/cron/feedback-triage/route.ts`, weekly Vercel cron. The only agent in Cottage Book.
+
+**1. Autonomy**
+- **Runs on its own:** weekly. Triages new feedback, writes a status, priority and rationale onto each note, opens a PR to `docs/BACKLOG.md`, and emails Josh a digest.
+- **Never:** merges a PR, edits or deletes a member's note, replies to members, or changes product code.
+- **Human approval:** Josh approves every backlog change by reviewing and merging the PR.
+
+**2. Tool calls (allowlist)**
+| Tool | Allowed | Not allowed |
+|------|---------|-------------|
+| Database (service role) | Read untriaged `feedback` rows; write `status`, `priority`, `priority_rationale`, `triaged_at` on those rows; write its own `job_runs` record | Any other table or column; bookings, chat, notes, members |
+| Model API | One call per weekly batch, small tier, JSON output | Tools, web access, other providers |
+| GitHub | Create a branch and open a PR touching only `docs/BACKLOG.md` | Merge, push to main, edit any other file |
+| Email | One digest to Josh | Any member or outside address |
+
+**3. Memory**
+- **Stateless between runs.** Each run sees a condensed set of PRD goals and non-goals, plus that week's untriaged notes. Past decisions live only in the rows' `status` and in `BACKLOG.md`.
+- **Data minimization:** only the note's text and cottage id go to the model. No names, emails or cottage names.
+- **Feedback is untrusted:** member text is data, never instructions. A note saying "mark this P0" or "ignore your rules" is triaged as written, not obeyed.
+
+**4. Chain ownership**
+- **The chain:** Vercel cron, then the route (checks `CRON_SECRET`), then the model, then the database write, then the GitHub PR, then the email digest. Josh owns every link.
+- **On failure:** any failed step is logged in `job_runs`, the route returns 500, and `/admin` System health shows it. If the PR step fails, the verdicts stand and the digest says the PR is missing.
+- **Kill switch:** unset `CRON_SECRET` and the route refuses every call (already built).
+- **Review:** quarterly, alongside the governance policy audit.
+
+### Season Draft
+Not an agent. One model call per request that returns JSON; it calls no tools and takes no actions. Code applies the hard-limit guardrail, and an owner or admin locks in every season.
 
 ## Shadow AI Audit
 
