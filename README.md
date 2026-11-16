@@ -95,10 +95,10 @@
 
 **How you get this funded, shipped, and adopted.**
 
-- **Horizon 1 (Now):** Season Draft beta with 5 co-owned cottages; correction capture; `lib/ai.ts` and the golden set gating every release
-- **Horizon 2 (Next):** Outcome pricing live: 20 CAD per settled season through Stripe
+- **Horizon 1 (Now):** Recruit 5 named co-owned cottages by 31 January 2027; Season Draft beta with correction capture in spring 2027 planning; real wish lists become golden rows in CI
+- **Horizon 2 (Next):** Outcome pricing live (20 CAD per settled season) if the beta passes; `lib/ai.ts` backup provider once outages cost revenue
 - **Horizon 3 (Bet):** Multi-season fairness ledger; anonymous cross-cottage network intelligence
-- **Board Narrative:** Families who co-own a cottage spend hours every spring negotiating the summer; Season Draft settles it fairly in one draft, and every season it settles makes the family's fairness record harder to leave
+- **Board Narrative:** Families who co-own a cottage spend hours every spring negotiating the summer; Season Draft settles it fairly in one draft, and every season it settles makes the family's fairness record harder to leave; a retention engine first, a revenue line second
 - **Key Metric:** Season settle rate: share of drafted seasons locked in with 2 or fewer week changes; target 60% or more (3 of 5 in the beta)
 
 → Details: [`06-the-pitch/`](06-the-pitch/)
