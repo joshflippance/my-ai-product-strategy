@@ -83,3 +83,53 @@ Founder time of about 30 hours a month and under 50 CAD of AI cost, no new cash 
 **M1 baseline:** Families who co-own a cottage will accept an AI-drafted summer if it shows every branch's fair share in nights and explains each clash. Cottage Book already tracks branches and shares, so turning a group-chat negotiation into one draft is worth paying for. Kill it if fewer than 3 of 5 cottages adopt the draft.
 
 **Now:** The AI draft itself is the easy part; a free chatbot can do a rough one, so the value is the record around it: a code guardrail families can trust, corrections that compound, and a fairness history that is hard to leave. AI cost is not the risk (about 97% gross on the add-on), so price on the outcome, 20 CAD only when a season settles. The bet is still unproven with real families, so the next six months exist to recruit 5 real co-owned cottages and test the bet against the same kill criteria in the spring 2027 planning window, before building anything bigger.
+
+## AI Bet Evaluator Output (full)
+*Course AI Bet Evaluator, all eight dimensions selected, run on 2026-11-16 against this repo's README. The tool's prompt was answered by an independent reviewer, not the author of the strategy. Recorded as returned; the summary table and the actions taken are in the AI Evaluation section above.*
+
+**Bet Validation**, Score: 2/5
+- Strengths: The hypothesis is falsifiable and the kill criteria are explicit: fewer than 3 of 5 real co-owned cottages lock in a draft with 2 or fewer week changes, or any hard-limit breach gets past the guardrail. The diagnostic is honest (Confidence M, "no co-owned cottage has tried it yet").
+- Gaps: There is no user evidence. No interviews, no usage, no recruited beta cottages named. The "hours every spring" pain is the founder's own estimate. The shadow AI audit found 0 seen workarounds and says "every build decision rests on one family." Validation is seasonal: real wish lists exist once a year, so missing the spring 2027 planning window pushes the test out a year. Five cottages is too small a sample to tell signal from noise.
+- Recommendation: Before building anything more, name and commit 5 co-owned cottages and run 5 interviews about how they settled last summer. Lock the beta to the spring 2027 planning window.
+
+**Capability Assessment**, Score: 3/5
+- Strengths: A working prototype exists. The guardrail runs in code. Scope is modest: a single model call, not an agent. Tenant isolation and the booking conflict check already exist in the product.
+- Gaps: Most of what's promised isn't built yet: `lib/ai.ts`, the failover adapter, the golden set running in CI, correction capture, all four red-team fixes, and Stripe (payments aren't live until May 2027). One founder at about 30 hours a month is the builder, reviewer, on-call and privacy officer.
+- Recommendation: Cut H1 to the beta plus correction capture. Ship the adapter only when a second provider is actually needed.
+
+**Impact Analysis**, Score: 1.5/5
+- Strengths: The economics are internally consistent, and the strategy admits that fixed hosting, not AI, sets the margin.
+- Gaps: Even at 100 cottages, an assumed number with no path to it, the uplift is about 40 CAD a month (485 CAD a year), and that assumes all 25 drafted seasons settle. That is a small gain against roughly 90 founder hours in the beta alone. The 25% co-owned share is an estimate. There is no market size for co-owned cottages and no acquisition plan.
+- Recommendation: Size the co-owned cottage market in Ontario and Quebec and lay out how Cottage Book gets from 1 to 100 cottages. Without that, the feature is a retention hook, not a revenue line, and it should be pitched that way.
+
+**Defensibility Check**, Score: 2/5
+- Strengths: The strategy candidly concedes that a free chatbot drafts well enough. The defense it picks, the record (corrections and a multi-season fairness ledger) plus bookings that actually land, is the right one.
+- Gaps: Flywheel 6/20, behind Family Cottage at 7/20. The correction loop isn't built. The ledger is H3. It fails its own 3-month freeze test. Family Cottage already has the co-owner data and the users. Switching costs today are close to zero.
+- Recommendation: Treat correction capture and the year-one fairness record as the product itself, and have them live before the first beta season locks.
+
+**Pricing Alignment**, Score: 2.5/5
+- Strengths: Outcome pricing per settled season is well matched to how value is delivered. A 10x power user costs cents, since redrafts are unlimited, and the add-on holds above 90% gross at 3x inference.
+- Gaps: There is no willingness-to-pay signal at all; the "labor test" is an assumption. Per-call token counts and model prices are "assumed, not looked up." Payment fees are left out, and on a 20 CAD charge they likely cost more than the AI. Undercutting a competitor that has users, with one cottage, is risky.
+- Recommendation: In the beta, ask each cottage to commit to the 20 CAD price before lock-in. Log real token counts from the prototype.
+
+**Trust & Reliability**, Score: 3.5/5
+- Strengths: This is the strongest part of the strategy. The guardrail is deterministic. Confidence tiers are visible, "Needs your call" blocks lock-in, and the human in the loop is the organiser. There is a numeric contract (92% pass, zero breaches, p95 under 45 s). The 27 golden rows include 7 adversarial cases and privacy cases.
+- Gaps: All 27 rows are synthetic, built from one illustrative cottage. CI isn't running. The 50% and 90% confidence thresholds come from the model's own tags with no calibration evidence. There is no uptime promise.
+- Recommendation: Turn each beta cottage's real wish lists into golden rows. Measure whether "Clear" weeks are actually edited less often.
+
+**Governance & Scale**, Score: 3/5
+- Strengths: Autonomy boundaries are clear, the triage agent can't merge, and PIPEDA and Law 25 triggers are named.
+- Gaps: The shadow AI audit is hypothesis-driven: it searched only the founder's Gmail and couldn't access the feedback table. All three learning loops are inactive. One person carries the whole governance load.
+- Recommendation: Run the audit again with beta families directly, using the one-question survey the strategy already proposes.
+
+**Gap Identification**, Score: 3/5
+- Strengths: The strategy is self-aware about weak moat scores, unbuilt loops and unproven adoption.
+- Gaps: The weakest component is the Bet, with the Moat close behind. Untested assumptions include the pain itself, the 25% share, willingness to pay, token costs and recruitability. Questions it can't answer today: where do 5 co-owned cottages come from, how many exist, and why spend founder time here instead of on growing the base product?
+- Recommendation: Add a one-page evidence log that ties every number to a source, marked seen or assumed.
+
+- **Overall Score:** 2.5/5. Careful trust and margin design built on top of a bet with no outside evidence.
+- **Biggest Risk:** Failing to recruit 5 co-owned cottages in time for spring 2027 planning. Then the kill test never runs, and the strategy stays a well-documented hypothesis for another year.
+- **Top 3 Actions:**
+  1. Recruit and confirm 5 co-owned cottages by name now, with a 20 CAD price commitment, ahead of spring planning.
+  2. Build correction capture and the lock-in flow before anything in H2 or H3, so the beta generates the record that is the moat.
+  3. Replace the assumed numbers (token costs, 25% share, market size, payment fees) with measured or sourced figures, and reframe the board case around retention unless revenue at scale can be shown.
