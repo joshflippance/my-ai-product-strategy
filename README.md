@@ -13,7 +13,7 @@
 | **The Margin** | M3 | [x] | `03-the-margin/` |
 | **The Contract** | M4 | [x] | `04-the-contract/` |
 | **The Guardrails** | M5 | [x] | `05-the-guardrails/` |
-| **The Pitch** | M6 | [ ] | `06-the-pitch/` |
+| **The Pitch** | M6 | [x] | `06-the-pitch/` |
 
 ---
 
@@ -95,10 +95,10 @@
 
 **How you get this funded, shipped, and adopted.**
 
-- **Horizon 1 (Now):**
-- **Horizon 2 (Next):**
-- **Horizon 3 (Bet):**
-- **Board Narrative:** [1-sentence thesis]
-- **Key Metric:**
+- **Horizon 1 (Now):** Season Draft beta with 5 co-owned cottages; correction capture; `lib/ai.ts` and the golden set gating every release
+- **Horizon 2 (Next):** Outcome pricing live: 20 CAD per settled season through Stripe
+- **Horizon 3 (Bet):** Multi-season fairness ledger; anonymous cross-cottage network intelligence
+- **Board Narrative:** Families who co-own a cottage spend hours every spring negotiating the summer; Season Draft settles it fairly in one draft, and every season it settles makes the family's fairness record harder to leave
+- **Key Metric:** Season settle rate: share of drafted seasons locked in with 2 or fewer week changes; target 60% or more (3 of 5 in the beta)
 
 → Details: [`06-the-pitch/`](06-the-pitch/)
