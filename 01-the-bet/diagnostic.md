@@ -15,7 +15,7 @@
 
 **Score rationale:** A family could leave easily in the off season. Branches, shares and the cost ledger add some stickiness once a cottage actually uses them, but only one cottage does today.
 
-**Named attacker (from partner challenge):** Family Cottage (familycottage.app), which already sells co-owners branches, fairness tracking, round robin picks and expense splits.
+**Named attacker (from partner challenge, AI partner: Claude):** Family Cottage (familycottage.app), which already sells co-owners branches, fairness tracking, round robin picks and expense splits.
 
 ---
 
@@ -24,7 +24,7 @@
 
 **Score rationale:** Season over season fairness history (who got which holiday, nights used against share) compounds per cottage, and a general model never sees it. Today it is tiny and lives in one cottage.
 
-**Named attacker (from partner challenge):** ChatGPT or Claude used directly. An organiser pastes the wish lists into a chatbot and gets a decent draft for free.
+**Named attacker (from partner challenge, AI partner: Claude):** ChatGPT or Claude used directly. An organiser pastes the wish lists into a chatbot and gets a decent draft for free.
 
 ---
 
@@ -33,7 +33,7 @@
 
 **Score rationale:** Scored higher = safer. Google Calendar or Apple Family could add shared calendars with AI suggestions, but they are unlikely to model branches, shares and costs. As a solo builder I can pivot quickly.
 
-**Named attacker (from partner challenge):** Google Calendar and Apple Family sharing with built-in AI scheduling.
+**Named attacker (from partner challenge, AI partner: Claude):** Google Calendar and Apple Family sharing with built-in AI scheduling.
 
 ---
 

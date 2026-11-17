@@ -77,7 +77,7 @@ Scored from Family Cottage's public positioning (bookings, expenses, documents a
 
 *Your partner played the Big Tech attacker. What was their plan to kill you?*
 
-**Attacker:** OpenAI (ChatGPT), played as Head of Product
+**Attacker:** OpenAI (ChatGPT), played by an AI partner (Claude) as Head of Product
 **Attack vector (target the weakest loop):** Correction. Cottage Book throws away every edit a family makes to a draft. ChatGPT keeps every correction in the conversation and in memory, so its second season is better than Cottage Book's.
 **Weeks 1-4 - what they ship:** A "Plan a shared stay" template in ChatGPT group chats. Each family member adds their wishes, ChatGPT drafts the season with a fairness table, anyone can say "give Paul the Civic Holiday instead" to redraft, and it exports to Google and Apple Calendar.
 **Weeks 5-8 - how they poach users:** Seed the template in cottage and co-ownership Facebook groups and Reddit threads with "stop fighting over the long weekend." Free, no new app to install, and the family is already in ChatGPT.

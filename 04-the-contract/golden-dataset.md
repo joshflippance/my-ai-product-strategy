@@ -2,7 +2,7 @@
 
 ## Golden Dataset Spec
 
-Feature under test: Season Draft. Today: 27 cases, 7 adversarial (rows 11 to 13 from the partner review, 14 to 23 from the optional expansion, 24 to 27 from the red team). v1 ship target: about 150, built from real wish lists once cottages use it.
+Feature under test: Season Draft. Today: 27 cases, 7 adversarial (rows 11 to 13 from the AI partner review, 14 to 23 from the optional expansion, 24 to 27 from the red team). v1 ship target: about 150, built from real wish lists once cottages use it.
 
 | # | Input | Expected Output | Edge Case? | Judge Type |
 |---|-------|----------------|-----------|-----------|
@@ -42,7 +42,7 @@ Feature under test: Season Draft. Today: 27 cases, 7 adversarial (rows 11 to 13 
 **Sales test:** "Every Season Draft is tested against 27 family summers, seven built to trick it, and code blocks the release if any draft breaks a family's can't-do dates."
 
 **Adversarial rows included:** 7 (rows 8, 9, 10, 21, 22, 23 and 24)
-**Coverage gaps identified by partner:**
+**Coverage gaps identified by partner (AI partner: Claude):**
 1. **Privacy in "Booked" only cottages.** No case checked that the family note respects hidden bookings. A draft that names another branch's plans would leak them to every member. Added as row 11.
 2. **The mid tier is untested.** The 80/20 cascade sends redrafts to the mid model, but the set assumed one model. Fix: run every row on both the frontier and mid tiers, and block the release if either fails.
 3. **Redrafts must keep locked weeks.** No case covered a redraft after the organiser locked weeks. Added as row 12.
@@ -144,6 +144,8 @@ Tooling already in place: GitHub Actions CI, PostHog (events, error tracking, al
 
 ## Red-Team Findings
 *What failure mode did your partner find that you missed?*
+
+*Red team run with an AI partner (Claude) playing the attacker.*
 
 **The one I missed: gaming the wish list.** A branch writes "can't do" for every week except the three holiday weeks. Every limit is real under my rules, so the draft honours them and hands that branch the holidays. Fairness breaks without a single rule failing, and the guardrail I was proudest of protects the gamer.
 - **Fix:** code flags any branch whose limits leave only holiday weeks, or block more than 70% of the season, and shows the organiser "Paul's family is only available on holiday weeks." Those weeks can't be tagged Clear. Holiday weeks count 1.5x toward fair share, so one branch can't take all three. Row 24.

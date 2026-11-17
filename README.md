@@ -4,6 +4,22 @@
 
 ---
 
+## Read This First
+
+- **The bet:** Season Draft, an AI feature in Cottage Book (cottagebook.ca) that drafts a co-owned cottage's summer fairly from each family branch's wish list and share. [Prototype](https://claude.ai/artifact/W67a6fskoYcuErZ2vFydV5)
+- **The moat:** the record, not the model. A chatbot can draft a season; only Cottage Book turns it into real bookings, checks hard limits in code, and keeps a fairness history that is hard to leave. Thin today (flywheel 6/20).
+- **The margin:** about 0.60 CAD of AI per settled season against a 20 CAD outcome price; about 97% gross on the add-on. A retention engine first, a revenue line second.
+- **The trust:** code guardrail on every hard limit, visible per-week confidence, no lock-in until a human resolves contested weeks, 27-row golden set gating release.
+- **The ask:** about 30 founder hours a month and under 50 CAD of AI cost to recruit 5 named co-owned cottages by 31 January 2027 and decide go or stop by 31 May 2027. Kill if fewer than 3 of 5 settle a season with 2 or fewer changes.
+
+**Evidence:** most numbers are still estimates; [`EVIDENCE.md`](EVIDENCE.md) marks each one as seen, sourced or assumed. AI Bet Evaluator: 2.5/5.
+
+**How this was built:** with Claude as an AI partner throughout. Where a module called for a partner, red team, auditor or reviewer, that role was played by Claude and is labelled in the file. Every decision was mine.
+
+**Presentation:** [`final-presentation.html`](final-presentation.html)
+
+---
+
 ## Strategy at a Glance
 
 | Component | Module | Status | Key Artifact |

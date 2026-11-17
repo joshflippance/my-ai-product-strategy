@@ -14,7 +14,7 @@ Feature: Season Draft in Cottage Book. Scores match the Module 2 flywheel (Corre
 
 **Freeze test:** freeze Season Draft for 3 months and nothing gets worse, because nothing learns today. It is not compounding yet.
 
-**Broken loop identified by partner:** Corrections only reach the model next season, so the Recursive Learning loop turns once a year. It can't compound before a competitor catches up.
+**Broken loop identified by partner (AI partner: Claude):** Corrections only reach the model next season, so the Recursive Learning loop turns once a year. It can't compound before a competitor catches up.
 **Fix plan:**
 1. Use corrections right away in the same season's redrafts ("Your call" weeks stay fixed and their reasons go into the prompt).
 2. Turn repeated overrides into golden rows every month.
@@ -105,7 +105,7 @@ Not an agent. One model call per request that returns JSON; it calls no tools an
 
 ## Shadow AI Audit
 
-User-side audit of AI workarounds families build around Cottage Book. Auditor: Claude, for Josh, 2026-11-09. Repo columns: Tool = workaround, Owner = signal, Risk = frequency, Decision = build / partner / ignore.
+User-side audit of AI workarounds families build around Cottage Book. Auditor: an AI partner (Claude), for Josh, 2026-11-09. Repo columns: Tool = workaround, Owner = signal, Risk = frequency, Decision = build / partner / ignore.
 
 **Method:** searched Josh's Gmail for Cottage Book with ChatGPT, Claude, Zapier, Family Cottage, Splitwise, AI and spreadsheet: no user-built AI workarounds found (only internal mail and one placeholder feedback note). Reviewed `docs/BACKLOG.md` for family-reported pain. The in-app `feedback` table was not reviewed (production access not granted to the auditor).
 

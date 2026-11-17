@@ -34,7 +34,7 @@ Revised after the AI Bet Evaluator (2.5/5): the bet has no outside evidence yet,
 **Deliberately not on the roadmap yet:** the four red-team fixes (wish-list gaming, stale drafts, lock-in races, code-written note numbers) and receipt photos. The red-team fixes are designed and their golden rows (24 to 27) already block release, so the beta can't ship a draft that fails them; building them is pulled forward only if the beta shows the failure.
 
 ## AI Evaluation
-*Course AI Bet Evaluator, all eight dimensions, run on 2026-11-16 against this repo's README. Answered by an independent reviewer, not the author of the strategy.*
+*Course AI Bet Evaluator, all eight dimensions, run on 2026-11-16 against this repo's README. Answered by a separate Claude instance acting as an independent reviewer, not the instance that helped draft the strategy.*
 
 | Dimension | Score | Finding | Action taken |
 |-----------|-------|---------|--------------|
@@ -85,7 +85,7 @@ Founder time of about 30 hours a month and under 50 CAD of AI cost, no new cash 
 **Now:** The AI draft itself is the easy part; a free chatbot can do a rough one, so the value is the record around it: a code guardrail families can trust, corrections that compound, and a fairness history that is hard to leave. AI cost is not the risk (about 97% gross on the add-on), so price on the outcome, 20 CAD only when a season settles. The bet is still unproven with real families, so the next six months exist to recruit 5 real co-owned cottages and test the bet against the same kill criteria in the spring 2027 planning window, before building anything bigger.
 
 ## AI Bet Evaluator Output (full)
-*Course AI Bet Evaluator, all eight dimensions selected, run on 2026-11-16 against this repo's README. The tool's prompt was answered by an independent reviewer, not the author of the strategy. Recorded as returned; the summary table and the actions taken are in the AI Evaluation section above.*
+*Course AI Bet Evaluator, all eight dimensions selected, run on 2026-11-16 against this repo's README. The tool's prompt was answered by a separate Claude instance acting as an independent reviewer, not the instance that helped draft the strategy. Recorded as returned; the summary table and the actions taken are in the AI Evaluation section above.*
 
 **Bet Validation**, Score: 2/5
 - Strengths: The hypothesis is falsifiable and the kill criteria are explicit: fewer than 3 of 5 real co-owned cottages lock in a draft with 2 or fewer week changes, or any hard-limit breach gets past the guardrail. The diagnostic is honest (Confidence M, "no co-owned cottage has tried it yet").
